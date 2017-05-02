@@ -1,0 +1,74 @@
+h1 {
+    text-align: center;
+}
+
+.content {
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    height: auto;
+    background-color: #eee
+}
+
+
+.row {
+    margin: 50px auto;
+    width: 90%;
+    height: auto;
+    background-color: #ccc
+}
+
+.clear-fix::after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0px;
+    visibility: hidden;
+}
+
+.image {
+    float: left;
+    width: 40%;
+    height: auto;
+}
+
+.image img{
+    width: 100%;
+}
+
+.description{
+    float: left;
+    width: 60%;
+    height: auto;
+}
+
+.move_title {
+    height: auto;
+    padding: 0 10px;
+
+}
+
+.move_title  span {
+    color: #777;
+    font-weight:100;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.genre, .meta, .plot, .director, .Writers, .Stars{
+    margin: 15px 10px;
+    color: #555;
+    font-size: 15px;
+}
+
+.director , .Writers, .Stars{
+    color: #000;
+    font-weight:600;
+}
+
+.director span, .Writers span, .Stars span{
+    color: #555;
+    font-weight:100;
+}
+
+
