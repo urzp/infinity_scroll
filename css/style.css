@@ -72,3 +72,9 @@ h1 {
 }
 
 
+footer img{
+    display: block;
+    width:  40px;
+    margin: 20px auto;
+    display: none;
+}
