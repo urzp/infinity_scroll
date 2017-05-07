@@ -1,5 +1,5 @@
 $(function(){
-    
+    var page = 0;
     function new_row_movies(movie){
         new_row();
         fill_last_row(movie);
@@ -31,7 +31,10 @@ $(function(){
     }
     var trasform_move_data = function (movie){
         new_data = {};
-        new_data.Poster = '<img src="' + movie.Poster + '" alt="img none">'
+        new_data.Poster = '<img src="' + movie.Poster + ' alt="no img" >'
+        if (movie.Poster == 'N/A'){
+          new_data.Poster = '<img src="img/i.jpg" alt="img none">'  
+        }
         new_data.Title = '<h3>' + movie.Title + ' <span>(' + movie.Year +')</span></h3>' 
         new_data.genre = movie.Runtime + ' ' + movie.Genre.replace(/\,/gi," |" ) + " - " + movie.Released;
         new_data.Plot = movie.Plot;
@@ -84,15 +87,16 @@ $(function(){
             
         }
         
-    }
-    
-
-    get_movies(5);
-    get_movies(6);
-    get_movies(7);
-    get_movies(8);
-
-     
+    }      
+    $( window ).scroll(function(){
+        var y = $(window).scrollTop();
+        var h = $(document).height() - $(window).height() - 10;       
+        if (y>h){
+            page+=1;
+            get_movies(page);
+        }
+    })
+    get_movies(page);
 })
 
 
